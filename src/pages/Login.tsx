@@ -21,6 +21,10 @@ const Login = () => {
     navigate("/dashboard");
   };
 
+  const handleRememberMeChange = (checked: boolean | "indeterminate") => {
+    setRememberMe(checked === true);
+  };
+
   const features = [
     { icon: Shield, text: "Enterprise-grade security" },
     { icon: Globe, text: "Multi-platform delivery" },
@@ -95,7 +99,7 @@ const Login = () => {
                     <Checkbox
                       id="remember"
                       checked={rememberMe}
-                      onCheckedChange={setRememberMe}
+                      onCheckedChange={handleRememberMeChange}
                     />
                     <Label htmlFor="remember" className="text-sm text-gray-600">
                       Remember me
